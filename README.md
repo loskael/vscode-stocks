@@ -20,3 +20,16 @@ It can show symbols color-coded by gain/loss with the setting `vscode-stocks.use
 
 ## Disclaimer
 By reading this, you agree not to sue me.
+
+## Update By loskael
+
+1、Add `SSE` And `SZSE` Support  
+2、Add color style
+```json
+"vscode-stocks.colorStyle": [
+    "red",    // up
+    "green",  // down
+    "white"   // -
+]
+```
+3、Add change pencent

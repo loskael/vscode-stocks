@@ -1,15 +1,15 @@
 {
-    "name": "vscode-stocks",
+    "name": "vscode-stocks-cn",
     "displayName": "Stocks",
     "description": "Watch stock prices from the VS Code status bar",
-    "version": "0.1.1",
-    "publisher": "roblourens",
+    "version": "0.1.2",
+    "publisher": "loskael",
     "repository": {
         "type": "git",
-        "url": "https://github.com/roblourens/vscode-stocks"
+        "url": "https://github.com/loskael/vscode-stocks"
     },
     "bugs": {
-        "url": "https://github.com/roblourens/vscode-stocks/issues"
+        "url": "https://github.com/loskael/vscode-stocks/issues"
     },
     "engines": {
         "vscode": "^1.5.0"
@@ -33,7 +33,12 @@
                 "vscode-stocks.useColors": {
                     "type": "boolean",
                     "default": false,
-                    "description": "If true, highlights items red when they're down and green when they're up."
+                    "description": "If true, highlights items red when they're down and green when they're up"
+                },
+                "vscode-stocks.colorStyle": {
+                    "type": "array",
+                    "default": ["red", "green", "-"],
+                    "description": "The stock quote style [UP, DOWN, ZERO]"
                 }
             }
         }
