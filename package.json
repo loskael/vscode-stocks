@@ -1,15 +1,15 @@
 {
-    "name": "vscode-stocks",
+    "name": "vscode-stocks-cn",
     "displayName": "Stocks",
     "description": "Watch stock prices from the VS Code status bar",
-    "version": "0.1.1",
-    "publisher": "roblourens",
+    "version": "0.1.5",
+    "publisher": "loskael",
     "repository": {
         "type": "git",
-        "url": "https://github.com/roblourens/vscode-stocks"
+        "url": "https://github.com/loskael/vscode-stocks"
     },
     "bugs": {
-        "url": "https://github.com/roblourens/vscode-stocks/issues"
+        "url": "https://github.com/loskael/vscode-stocks/issues"
     },
     "engines": {
         "vscode": "^1.5.0"
@@ -33,7 +33,21 @@
                 "vscode-stocks.useColors": {
                     "type": "boolean",
                     "default": false,
-                    "description": "If true, highlights items red when they're down and green when they're up."
+                    "description": "If true, highlights items red when they're down and green when they're up"
+                },
+                "vscode-stocks.colorStyle": {
+                    "type": "array",
+                    "default": [
+                        "red",
+                        "green",
+                        "white"
+                    ],
+                    "description": "The stock quote color style [↑, ↓, -]"
+                },
+                "vscode-stocks.refreshInterval": {
+                    "type": "number",
+                    "default": 60000,
+                    "description": "The stock quote refresh interval (ms)"
                 }
             }
         }
@@ -44,10 +58,13 @@
         "postinstall": "node ./node_modules/vscode/bin/install"
     },
     "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
+        "@types/mocha": "^2.2.32",
         "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+        "mocha": "^2.3.3",
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0"
+    },
+    "dependencies": {
+        "iconv-lite": "^0.4.24"
     }
 }
