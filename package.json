@@ -37,8 +37,8 @@
                 },
                 "vscode-stocks.colorStyle": {
                     "type": "array",
-                    "default": ["red", "green", "-"],
-                    "description": "The stock quote style [UP, DOWN, ZERO]"
+                    "default": ["red", "green", "white"],
+                    "description": "The stock quote style [UP, DOWN, -]"
                 }
             }
         }
