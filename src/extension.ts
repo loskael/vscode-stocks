@@ -6,9 +6,11 @@ import * as iconv from 'iconv-lite'
 let items: Map<string, vscode.StatusBarItem>
 export function activate(context: vscode.ExtensionContext) {
     items = new Map<string, vscode.StatusBarItem>();
+    const config = vscode.workspace.getConfiguration()
+    const refreshInterval = config.get('vscode-stocks.refreshInterval', 60 * 1e3)
 
     refresh()
-    setInterval(refresh, 60 * 1e3)
+    setInterval(refresh, refreshInterval)
     context.subscriptions.push(vscode.workspace.onDidChangeConfiguration(refresh))
 }
 

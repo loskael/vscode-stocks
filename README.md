@@ -33,3 +33,7 @@ By reading this, you agree not to sue me.
 ]
 ```
 3、Add change pencent
+4、Add refresh interval
+```json
+"vscode-stocks.refreshInterval": 5000
+```

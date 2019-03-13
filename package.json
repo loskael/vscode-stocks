@@ -42,7 +42,12 @@
                         "green",
                         "white"
                     ],
-                    "description": "The stock quote style [UP, DOWN, -]"
+                    "description": "The stock quote color style [↑, ↓, -]"
+                },
+                "vscode-stocks.refreshInterval": {
+                    "type": "number",
+                    "default": 60000,
+                    "description": "The stock quote refresh interval (ms)"
                 }
             }
         }
