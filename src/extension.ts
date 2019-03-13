@@ -144,17 +144,16 @@ function updateItemWithSymbolQuote(symbolQuote) {
     if (!item) return;
     const price: number = parseInt(symbolQuote.latestPrice, 10)
     const percent: number = parseFloat(symbolQuote.changePercent)
+    const change: number = parseFloat(symbolQuote.change)
+    const changeArrow: Array<string> = ["↑", "↓", ""];
+    const changeIndex = change > 0 ? 0 : change < 0 ? 1 : 2;
 
-    item.text = `${symbol.toUpperCase()} $${price} - ${percent.toFixed(2)}%`
+    item.text = `${symbol.toUpperCase()} $${price} ${changeArrow[changeIndex]} ${percent.toFixed(2)}%`
     const config = vscode.workspace.getConfiguration()
     const useColors = config.get('vscode-stocks.useColors', false)
-    const [colorUp, colorDown, colorZero] = config.get('vscode-stocks.colorStyle', ['red', 'green', 'white'])
+    const colorStyle = config.get('vscode-stocks.colorStyle', ['red', 'green', 'white'])
     if (useColors) {
-        const change = parseFloat(symbolQuote.change)
-        const color = change > 0 ? colorUp :
-            change < 0 ? colorDown :
-                colorZero
-        item.color = color
+        item.color = colorStyle[changeIndex]
     } else {
         item.color = undefined
     }
